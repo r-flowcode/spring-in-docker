@@ -3,13 +3,13 @@
 In this application, I have developed a simple SpringBoot application with a single rest endpoint **/rest/hello-world**. 
 This application is embedded in a Docker image using the bash script **create-and-export-docker-image.sh**.
 
-### **To Run without Docker**
+### **To run without Docker**
 ```
 > mvn clean package -DskipTests
 > java -jar target/spring-in-docker-1.0.0.jar
 ```
 
-### **To Run with Docker**
+### **To run with Docker**
 ```
 > mvn clean package -DskipTests
 > docker build -t <image-name>
