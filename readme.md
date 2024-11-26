@@ -42,22 +42,22 @@ ENTRYPOINT ["java","-jar","./app.jar"]
 A separate application directory **\$APP_DIRECTORY** is created for the application, which belongs to application user **\$APP_USER**:**\$APP_USER_GROUP**.
 
 ### **Bash Script**
-```
+```shell
 #!/bin/bash
 
 IMAGE_NAME=spring-in-docker-image
 
-echo "1/3 Creating JAR ..."
+echo "> Step 1/3: Creating JAR"
 mvn clean package -DskipTests
-echo "1/3 Creating JAR ... DONE!"
+echo "> Step  1/3: Creating JAR - COMPLETED!"
 
-echo "2/3 Creating Docker Image ..."
+echo "> Step  2/3: Creating Docker Image ..."
 docker build -t $IMAGE_NAME .
-echo "2/3 Creating Docker Image ... DONE!"
+echo "> Step  2/3: Creating Docker Image - COMPLETED!"
 
-echo "3/3 Exporting Docker Image ..."
+echo "> Step  3/3: Exporting Docker Image ..."
 docker save -o ./target/$IMAGE_NAME.tar $IMAGE_NAME
-echo "3/3 Exporting Docker Image ... DONE!"
+echo "> Step 3/3: Exporting Docker Image - COMPLETED!"
 ```
 
 
